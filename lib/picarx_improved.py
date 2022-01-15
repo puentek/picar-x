@@ -4,9 +4,9 @@ ISPI = True
 import time 
 import atexit 
 try:
-    from ezblock import *
-    from ezblock import __reset_mcu__
-    __reset_mcu__ ()
+    # from ezblock import *
+    # from ezblock import __reset_mcu__
+    # __reset_mcu__ ()
     from servo import Servo 
     from pwm import PWM
     from pin import Pin
