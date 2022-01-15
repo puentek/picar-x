@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(1,'/home/pi/picar-x/lib')
+sys.path.insert(1,'../../picar-x/lib')
 from picarx_improved import Picarx
 import time 
 
