@@ -1,3 +1,5 @@
+import sys
+sys.path.insert(1,'/home/pi/picar-x/lib')
 from picarx_improved import Picarx
 import time 
 
@@ -12,7 +14,6 @@ if __name__ == "__main__":
 #     px.self.set_motor_speed(1, 1)
 #     px.self.set_motor_speed(2, 1)
 #     px.camera_servo_pin.angle(0)
-# set_camera_servo1_angle(cam_cal_value_1)
 # set_camera_servo2_angle(cam_cal_value_2)
 # set_dir_servo_angle(dir_cal_value)
 
