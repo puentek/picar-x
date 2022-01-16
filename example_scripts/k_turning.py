@@ -32,3 +32,14 @@ if __name__ == "__main__":
     px.stop()
     time.sleep(.1)
 
+    # turn and go forward
+    px.set_dir_servo_angle(0)
+    time.sleep(2)
+    px.stop()
+
+    px.forward(50)
+    time.sleep(1)
+    px.stop()
+    time.sleep(.1)
+
+
