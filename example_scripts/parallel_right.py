@@ -11,8 +11,10 @@ if __name__ == "__main__":
     time.sleep(1)
     px.set_dir_servo_angle(30)
     time.sleep(2)
-    px.backward(15)
+    px.backward(10)
     time.sleep(2)
-    
+    px.set_dir_servo_angle(35)
+    time.sleep(2)
+
 
     px.stop()
