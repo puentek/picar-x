@@ -11,6 +11,7 @@ def move_straight():
     time.sleep(1)
     px.backward(30)
     time.sleep(1)
+    px.stop()
 
 
 def parallel_left():
@@ -59,6 +60,7 @@ def parallel_left():
     time.sleep(.25)
     px.stop()
     time.sleep(.1)
+    px.stop()
 
 def parallel_right():
     px = Picarx()
@@ -95,6 +97,7 @@ def parallel_right():
     time.sleep(.55)
     px.stop()
     time.sleep(.1)
+    px.stop()
 
 def k_turn():
     px = Picarx()
@@ -133,6 +136,7 @@ def k_turn():
     time.sleep(1)
     px.stop()
     time.sleep(.1)
+    px.stop()
 
 if __name__ == "__main__":
     while(1):
