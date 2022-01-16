@@ -8,7 +8,7 @@ if __name__ == "__main__":
     # move car forward (a)
     
     px.forward(50)
-    time.sleep(.5)
+    time.sleep(.25)
     px.stop()
     time.sleep(.1)
 
@@ -46,7 +46,7 @@ if __name__ == "__main__":
     px.stop()
 
     px.forward(50)
-    time.sleep(.5)
+    time.sleep(.25)
     px.stop()
     time.sleep(.1)
 
