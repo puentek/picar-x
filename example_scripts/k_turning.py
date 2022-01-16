@@ -13,12 +13,13 @@ if __name__ == "__main__":
     time.sleep(.1)
 
     #turn right
-    px.set_dir_servo_angle(-30)
+    px.set_dir_servo_angle(-45)
     time.sleep(2)
     px.stop()
 
     px.forward(50)
-    time.sleep(.70)
+    time.sleep(1)
     px.stop()
     time.sleep(.1)
     
+
