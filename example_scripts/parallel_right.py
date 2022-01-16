@@ -7,11 +7,11 @@ if __name__ == "__main__":
     px = Picarx()
     # move car forward (a)
     
-    px.forward(15)
+    px.forward(20)
     time.sleep(1)
     px.set_dir_servo_angle(30)
     time.sleep(1)
-    px.backward(15)
-    time.sleep(1)
+    # px.backward(15)
+    # time.sleep(1)
 
     px.stop()
