@@ -6,12 +6,12 @@ import time
 if __name__ == "__main__":
     px = Picarx()
     # move car forward (a)
-    px.set_dir_servo_angle(0)
+    
     px.forward(15)
-    time.sleep(3)
+    time.sleep(1)
     px.set_dir_servo_angle(30)
-    time.sleep(3)
-    px.backward(20)
-    time.sleep(3)
+    time.sleep(1)
+    px.backward(15)
+    time.sleep(1)
 
     px.stop()
