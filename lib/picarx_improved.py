@@ -64,13 +64,21 @@ class Picarx(object):
         self.cali_dir_value = self.config_flie.get("picarx_dir_motor", default_value="[1,1]")
         self.cali_dir_value = [int(i.strip()) for i in self.cali_dir_value.strip("[]").split(",")]
         self.cali_speed_value = [0, 0]
-        self.dir_current_angle = -10
+        self.dir_current_angle = 0
         
         for pin in self.motor_speed_pins:
             pin.period(self.PERIOD)
             pin.prescaler(self.PRESCALER)
-        atexit.register(self.set_motor_speed, 1,0)
-        atexit.register(self.set_motor_speed, 2,0)
+        # atexit.register(self.set_motor_speed, 1,0)
+        # atexit.register(self.set_motor_speed, 2,0)
+        atexit.register(self.cleanup)
+
+    def cleanup(self):
+        self.set_motor_speed(1,0)
+        self.set_motor_speed(2,0)
+        
+
+
 
 
 
