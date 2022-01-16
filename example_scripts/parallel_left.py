@@ -7,7 +7,7 @@ if __name__ == "__main__":
     px = Picarx()
     # move car forward (a)
     
-    px.backward(50)
+    px.forward(50)
     time.sleep(.25)
     px.stop()
     time.sleep(.1)
@@ -25,7 +25,7 @@ if __name__ == "__main__":
     time.sleep(.25)
     px.stop()
 
-    px.set_dir_servo_angle(-25)
+    px.set_dir_servo_angle(-35)
     time.sleep(2)
     px.stop()
 
@@ -33,7 +33,7 @@ if __name__ == "__main__":
     time.sleep(.25)
     px.stop()
 
-    px.set_dir_servo_angle(-25)
+    px.set_dir_servo_angle(-35)
     time.sleep(2)
     px.stop()
 
