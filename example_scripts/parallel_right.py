@@ -16,5 +16,9 @@ if __name__ == "__main__":
     px.forward(50)
     time.sleep(.5)
     px.stop()
-
+    px.backward(50)
+    time.sleep(.5)
+    px.stop()
     
+
+
