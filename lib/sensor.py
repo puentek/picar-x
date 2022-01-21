@@ -19,7 +19,7 @@ class Sensor(object):
         adc_value_list.append(self.chn_2.read())
         return adc_value_list
     def calibrate(self):
-        sensitivity = []
+        
         if abs(self.chn_0.read() - self.chn_2.read()) < abs(self.chn_0.read()-self.chn_1.read()) and abs(self.chn_0.read() - self.chn_2.read()) < abs(self.chn_1.read()-self.chn_2.read()):
             x = random(abs(self.chn_0.read()-self.chn_2.read()), abs(self.chn_0.read()-self.chn_1.read()))
             sensitivity = abs(self.chn_0.read() - self.chn_2.read()) + x
@@ -47,11 +47,13 @@ class Sensor(object):
 if __name__ == "__main__":
     import time
     SN = Sensor()
+    
     # while True:
     #     print(SN.sensor_reading())
     #     time.sleep(1)
 
     logging.debug(f"Sensor reading:{SN,SN.sensor_reading()}")
+    logging.debug(f"Sensitivity and polarity :{SN,SN.calibrate()}")
     # logging.debug(f"debug")
     logging.info(f"info")
     logging.error(f"error")
