@@ -20,7 +20,7 @@ class Sensor(object):
         return adc_value_list
     def calibrate(self):
         sensitivity = []
-        if abs(self.chn_0.read() - self.chn_2.read()) < abs(self.chn_0.read()-self.chn_1.read()) and < abs(self.chn_1.read()-self.chn_2.read()):
+        if abs(self.chn_0.read() - self.chn_2.read()) < abs(self.chn_0.read()-self.chn_1.read()) and abs(self.chn_0.read() - self.chn_2.read()) < abs(self.chn_1.read()-self.chn_2.read()):
             x = random(abs(self.chn_0.read()-self.chn_2.read()), abs(self.chn_0.read()-self.chn_1.read()))
             sensitivity = abs(self.chn_0.read() - self.chn_2.read()) + x
             return sensitivity
@@ -30,7 +30,7 @@ class Sensor(object):
         else: 
              logging.error(f"Robot is too far to calibrate")
 
-        if self.chn_0.read()-self.chn_1.read() and self.chn_1.read()-self.chn_2.read() < 0:
+        if self.chn_0.read()-self.chn_1.read() < 0 and self.chn_1.read()-self.chn_2.read() < 0:
             if self.chn_0.read()-self.chn_1.read() < 0:
                 polarity = 0
                 return polarity   
@@ -39,6 +39,8 @@ class Sensor(object):
                 return polarity
         else: 
             logging.error(f"Robot cannot be calibrated")
+            polarity = -1
+            return polarity
 
 
 
