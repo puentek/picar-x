@@ -58,7 +58,7 @@ if __name__ == "__main__":
     #     time.sleep(1)
 
     logging.debug(f"Sensor reading:{SN,SN.sensor_reading()}")
-    # logging.debug(f"Sensitivity and polarity :{SN,SN.calibrate()}")
+    logging.debug(f"Sensitivity and polarity :{SN,SN.calibrate()}")
     # logging.debug(f"debug")
     # logging.info(f"info")
     # logging.error(f"error")
