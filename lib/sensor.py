@@ -33,15 +33,17 @@ class Sensor(object):
              logging.error(f"Robot is too far to calibrate")
 
         if self.chn_0.read()-self.chn_1.read() < 0 and self.chn_2.read()-self.chn_1.read() < 0:
-            if self.chn_0.read()-self.chn_1.read() < 0:
-                polarity = 0
-                # return polarity
-                logging.debug(f"polarity: {polarity}")   
-            else: 
-                polarity = 1
-                # return polarity
-                logging.debug(f"polarity: {polarity}")   
-        else: 
+            polarity = 0
+            # return polarity
+            logging.debug(f"polarity: {polarity}")   
+             
+        elif self.chn_0.read()-self.chn_1.read() > 0 and self.chn_2.read()-self.chn_1.read() > 0: 
+            polarity = 1
+            # return polarity
+            logging.debug(f"polarity: {polarity}")   
+    
+
+        else:
             # logging.error(f"Robot cannot be calibrated")
             polarity = -1
             # return polarity
