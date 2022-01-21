@@ -1,5 +1,6 @@
 
 
+from random import random
 from re import L
 from adc import ADC
 import logging 
@@ -17,6 +18,29 @@ class Sensor(object):
         adc_value_list.append(self.chn_1.read())
         adc_value_list.append(self.chn_2.read())
         return adc_value_list
+    def calibrate(self):
+        sensitivity = []
+        if abs(self.chn_0.read() - self.chn_2.read()) < abs(self.chn_0.read()-self.chn_1.read()) and < abs(self.chn_1.read()-self.chn_2.read()):
+            x = random(abs(self.chn_0.read()-self.chn_2.read()), abs(self.chn_0.read()-self.chn_1.read()))
+            sensitivity = abs(self.chn_0.read() - self.chn_2.read()) + x
+            return sensitivity
+        # elif abs(self.chn_0.read() - self.chn_2.read()) > abs(self.chn_1.read()-self.chn_2.read()):
+        #     sensitivity = self.sensor_reading + 10
+        #     return sensitivity
+        else: 
+             logging.error(f"Robot is too far to calibrate")
+
+        if self.chn_0.read()-self.chn_1.read() and self.chn_1.read()-self.chn_2.read() < 0:
+            if self.chn_0.read()-self.chn_1.read() < 0:
+                polarity = 0
+                return polarity   
+            else: 
+                polarity = 1
+                return polarity
+        else: 
+            logging.error(f"Robot cannot be calibrated")
+
+
 
 if __name__ == "__main__":
     import time
