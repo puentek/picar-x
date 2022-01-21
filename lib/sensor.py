@@ -4,6 +4,7 @@ from random import random
 from re import L
 from adc import ADC
 import logging 
+import random 
 logging.basicConfig(level=logging.DEBUG)
 
 class Sensor(object):
@@ -21,7 +22,7 @@ class Sensor(object):
     def calibrate(self):
         
         if abs(self.chn_0.read() - self.chn_2.read()) < abs(self.chn_0.read()-self.chn_1.read()) and abs(self.chn_0.read() - self.chn_2.read()) < abs(self.chn_1.read()-self.chn_2.read()):
-            x = random(abs(self.chn_0.read()-self.chn_2.read()), abs(self.chn_0.read()-self.chn_1.read()))
+            x = random.randint(abs(self.chn_0.read()-self.chn_2.read()), abs(self.chn_0.read()-self.chn_1.read()))
             sensitivity = abs(self.chn_0.read() - self.chn_2.read()) + x
             # return sensitivity
             logging.debug(f"sensitivity{sensitivity}")
