@@ -22,7 +22,7 @@ class Sensor(object):
     def calibrate(self):
         
         if abs(self.chn_0.read() - self.chn_2.read()) < abs(self.chn_0.read()-self.chn_1.read()) and abs(self.chn_0.read() - self.chn_2.read()) < abs(self.chn_1.read()-self.chn_2.read()):
-            x = random.randint(abs(self.chn_0.read()-self.chn_2.read()), abs(self.chn_0.read()-self.chn_1.read()))
+            x = (self.chn_0.read() - self.chn_2.read()) + min((self.chn_0.read()-self.chn_1.read()), self.chn_0.read() - self.chn_2.read())/2
             sensitivity = abs(self.chn_0.read() - self.chn_2.read()) + x
             # return sensitivity
             logging.debug(f"sensitivity: {sensitivity}")
