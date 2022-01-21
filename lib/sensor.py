@@ -23,7 +23,8 @@ class Sensor(object):
         if abs(self.chn_0.read() - self.chn_2.read()) < abs(self.chn_0.read()-self.chn_1.read()) and abs(self.chn_0.read() - self.chn_2.read()) < abs(self.chn_1.read()-self.chn_2.read()):
             x = random(abs(self.chn_0.read()-self.chn_2.read()), abs(self.chn_0.read()-self.chn_1.read()))
             sensitivity = abs(self.chn_0.read() - self.chn_2.read()) + x
-            return sensitivity
+            # return sensitivity
+            logging.debug(f"sensitivity{sensitivity}")
         # elif abs(self.chn_0.read() - self.chn_2.read()) > abs(self.chn_1.read()-self.chn_2.read()):
         #     sensitivity = self.sensor_reading + 10
         #     return sensitivity
@@ -33,14 +34,17 @@ class Sensor(object):
         if self.chn_0.read()-self.chn_1.read() < 0 and self.chn_1.read()-self.chn_2.read() < 0:
             if self.chn_0.read()-self.chn_1.read() < 0:
                 polarity = 0
-                return polarity   
+                # return polarity
+                logging.debug(f"polarity: {polarity}")   
             else: 
                 polarity = 1
-                return polarity
+                # return polarity
+                logging.debug(f"polarity: {polarity}")   
         else: 
-            logging.error(f"Robot cannot be calibrated")
+            # logging.error(f"Robot cannot be calibrated")
             polarity = -1
-            return polarity
+            # return polarity
+            logging.debug(f"Robot cannot be calibrated; polarity: {polarity}")   
 
 
 
