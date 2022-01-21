@@ -20,7 +20,7 @@ class Sensor(object):
 
 if __name__ == "__main__":
     import time
-    SN = Sensor(950)
+    SN = Sensor()
     # while True:
     #     print(SN.sensor_reading())
     #     time.sleep(1)
