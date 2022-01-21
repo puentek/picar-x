@@ -25,14 +25,14 @@ class Sensor(object):
             x = random.randint(abs(self.chn_0.read()-self.chn_2.read()), abs(self.chn_0.read()-self.chn_1.read()))
             sensitivity = abs(self.chn_0.read() - self.chn_2.read()) + x
             # return sensitivity
-            logging.debug(f"sensitivity{sensitivity}")
+            logging.debug(f"sensitivity: {sensitivity}")
         # elif abs(self.chn_0.read() - self.chn_2.read()) > abs(self.chn_1.read()-self.chn_2.read()):
         #     sensitivity = self.sensor_reading + 10
         #     return sensitivity
         else: 
              logging.error(f"Robot is too far to calibrate")
 
-        if self.chn_0.read()-self.chn_1.read() < 0 and self.chn_1.read()-self.chn_2.read() < 0:
+        if self.chn_0.read()-self.chn_1.read() < 0 and self.chn_2.read()-self.chn_1.read() < 0:
             if self.chn_0.read()-self.chn_1.read() < 0:
                 polarity = 0
                 # return polarity
