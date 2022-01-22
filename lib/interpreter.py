@@ -22,13 +22,13 @@ class Interpreter(object):
         c_p1 = abs(sense_val[1]-sense_val[2]) < self.sensitivity
 
         #left for p = 0
-        l = abs(sense_val[1]-sense_val[0]) < self.sensitivity
-        l_1 = abs(sense_val[1]-sense_val[2]) > self.sensitivity
+        l = abs(sense_val[1]-sense_val[0]) > self.sensitivity
+        l_1 = abs(sense_val[1]-sense_val[2]) < self.sensitivity
         l_2 = abs(sense_val[1]) > abs(sense_val[0])
 
          #left for p = 1
-        l_p = abs(sense_val[1]-sense_val[0]) < self.sensitivity
-        l_p1 = abs(sense_val[1]-sense_val[2]) > self.sensitivity
+        l_p = abs(sense_val[1]-sense_val[0]) > self.sensitivity
+        l_p1 = abs(sense_val[1]-sense_val[2]) < self.sensitivity
         l_p2 = abs(sense_val[1]) < abs(sense_val[0])
 
         # left left for p = 0
@@ -87,7 +87,7 @@ class Interpreter(object):
             if c_p and c_p1:
                 return 'c'
                 # logging.debug(f"c:  {self.sensitivity} ")
-            elif l_p1 and l_p1 and l_p2:
+            elif l_p and l_p1 and l_p2:
                 return 'l' 
             elif llp and ll_p1 and ll_p2:
                 return 'll'
