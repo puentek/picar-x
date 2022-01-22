@@ -1,3 +1,4 @@
+from cmath import log
 from re import L
 from adc import ADC
 from sensor import Sensor
@@ -99,6 +100,7 @@ class Interpreter(object):
             
     def output(self, sensor_vals):
         posi = self.processor(sensor_vals)
+        logging.debug(f"processor out (posi:): {posi}")
         if posi =='c':
             return 0
         elif posi == 'l':

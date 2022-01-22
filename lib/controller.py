@@ -38,6 +38,7 @@ if __name__ == "__main__":
     interp = Interpreter(sensitivity,polarity)
     car = Picarx()
     robot_pos = interp.output(sensor.sensor_reading())
+    logging.debug(f"robot pos: {robot_pos}")
     controller = Controller(car,robot_pos,30)
 
     while(1):
