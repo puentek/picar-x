@@ -13,53 +13,53 @@ class Interpreter(object):
 
     def processor(self,sense_val):
         # center for p= 0
-        c = abs(sense_val[0]-sense_val[2]) > self.sensitivity
-        c_1 = abs(sense_val[0]-sense_val[1]) > self.sensitivity
+        c = abs(sense_val[1]-sense_val[0]) > self.sensitivity
+        c_1 = abs(sense_val[1]-sense_val[2]) > self.sensitivity
 
         # center for p= 1
-        c_p = abs(sense_val[0]-sense_val[2]) < self.sensitivity
-        c_p1 = abs(sense_val[0]-sense_val[1]) < self.sensitivity
+        c_p = abs(sense_val[1]-sense_val[0]) < self.sensitivity
+        c_p1 = abs(sense_val[1]-sense_val[2]) < self.sensitivity
 
         #left for p = 0
-        l = abs(sense_val[0]-sense_val[2]) < self.sensitivity
-        l_1 = abs(sense_val[0]-sense_val[1]) > self.sensitivity
-        l_2 = abs(sense_val[1]) < abs(sense_val[0])
+        l = abs(sense_val[1]-sense_val[0]) < self.sensitivity
+        l_1 = abs(sense_val[1]-sense_val[2]) > self.sensitivity
+        l_2 = abs(sense_val[1]) > abs(sense_val[0])
 
          #left for p = 1
-        l_p = abs(sense_val[0]-sense_val[2]) > self.sensitivity
-        l_p1 = abs(sense_val[0]-sense_val[1]) < self.sensitivity
-        l_p2 = abs(sense_val[1]) > abs(sense_val[0])
+        l_p = abs(sense_val[1]-sense_val[0]) < self.sensitivity
+        l_p1 = abs(sense_val[1]-sense_val[2]) > self.sensitivity
+        l_p2 = abs(sense_val[1]) < abs(sense_val[0])
 
         # left left for p = 0
-        ll = abs(sense_val[0]-sense_val[2]) > self.sensitivity
-        ll_1 = abs(sense_val[0]-sense_val[1]) < self.sensitivity
+        ll = abs(sense_val[1]-sense_val[0]) < self.sensitivity
+        ll_1 = abs(sense_val[1]-sense_val[2]) > self.sensitivity
         ll_2 = abs(sense_val[2]) > abs(sense_val[1])
 
         # left left for p = 1
-        llp = abs(sense_val[0]-sense_val[2]) < self.sensitivity
-        ll_p1 = abs(sense_val[0]-sense_val[1]) > self.sensitivity
+        llp = abs(sense_val[1]-sense_val[0]) < self.sensitivity
+        ll_p1 = abs(sense_val[1]-sense_val[2]) > self.sensitivity
         ll_p2 = abs(sense_val[2]) < abs(sense_val[1])
 
 
         # right for p = 0
-        r = abs(sense_val[0]-sense_val[2]) > self.sensitivity
-        r_1 = abs(sense_val[0]-sense_val[1]) < self.sensitivity
-        r_2 = abs(sense_val[1]) < abs(sense_val[2])
+        r = abs(sense_val[1]-sense_val[0]) < self.sensitivity
+        r_1 = abs(sense_val[1]-sense_val[2]) > self.sensitivity
+        r_2 = abs(sense_val[1]) > abs(sense_val[2])
 
          # right for p = 1
-        rp = abs(sense_val[0]-sense_val[2]) < self.sensitivity
-        r_p1 = abs(sense_val[0]-sense_val[1]) > self.sensitivity
-        r_p2 = abs(sense_val[1]) > abs(sense_val[2])
+        rp = abs(sense_val[1]-sense_val[0]) < self.sensitivity
+        r_p1 = abs(sense_val[1]-sense_val[2]) > self.sensitivity
+        r_p2 = abs(sense_val[1]) < abs(sense_val[2])
 
 
-        # right for p = 0
-        rr = abs(sense_val[0]-sense_val[2]) < self.sensitivity
-        rr_1 = abs(sense_val[0]-sense_val[1])> self.sensitivity
+        # right right for p = 0
+        rr = abs(sense_val[1]-sense_val[0]) > self.sensitivity
+        rr_1 = abs(sense_val[1]-sense_val[2])< self.sensitivity
         rr_2 = abs(sense_val[1]) < abs(sense_val[0])
 
-        # right for p = 1
-        rrp = abs(sense_val[0]-sense_val[2]) > self.sensitivity
-        rr_p1 = abs(sense_val[0]-sense_val[1])< self.sensitivity
+        # right right for p = 1
+        rrp = abs(sense_val[1]-sense_val[0]) > self.sensitivity
+        rr_p1 = abs(sense_val[1]-sense_val[2])< self.sensitivity
         rr_p2 = abs(sense_val[1]) > abs(sense_val[0])
 
 
