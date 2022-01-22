@@ -81,6 +81,7 @@ class Interpreter(object):
                 return 'rr' 
             else:
                 logging.debug(f"sensitivity not detectable: {self.sensitivity}")
+                return 'c'
             
         elif self.polarity == 1:
             if c_p and c_p1:
@@ -96,6 +97,7 @@ class Interpreter(object):
                 return 'rr'  
             else:
                 logging.debug(f"sensitivity not detectable: {self.sensitivity}")
+                return 'c'
             
 
             
