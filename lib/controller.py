@@ -16,14 +16,14 @@ class Controller(object):
     def __init__(self,car,offset,turn_angle):
         #set self. cr ob
         self.car = car 
-        self.car.set_dir_servo_angle(int(offset*turn_angle))
+        self.car.set_dir_servo_angle(int(-offset*turn_angle))
         
     
-    def control(self, offset, turn_angle):
-        turn_angle = int(-offset*turn_angle)    
-        self.car.set_dir_servo_angle(turn_angle) 
-        logging.debug(f"current stearing angle at : {turn_angle}") 
-        return turn_angle
+    def control(self, offset, steer_angle):
+        steer_angle = int(-offset*steer_angle)    
+        self.car.set_dir_servo_angle(steer_angle) 
+        logging.debug(f"current stearing angle at : {steer_angle}") 
+        return steer_angle
         '''
         The main control method should call the steering-servo method from your car class so that
         it turns the car toward the line. It should also return the commanded steering angle.'''
