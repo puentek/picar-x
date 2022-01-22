@@ -45,6 +45,6 @@ if __name__ == "__main__":
        sensor_vals = sensor.sensor_reading()
        robot_pos = interp.output(sensor_vals)
        controller.control(robot_pos, 20)
-    #    car.forward(30)
+       car.forward(15)
 
     car.stop()
