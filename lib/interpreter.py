@@ -13,6 +13,7 @@ class Interpreter(object):
 
     def processor(self,sense_val):
         # center for p= 0
+        logging.debug(f"sensor vals: {sense_val}, sensitivity: {self.sensitivity}, polarity: {self.polarity}")
         c = abs(sense_val[1]-sense_val[0]) > self.sensitivity
         c_1 = abs(sense_val[1]-sense_val[2]) > self.sensitivity
 
