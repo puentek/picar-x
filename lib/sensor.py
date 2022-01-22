@@ -22,17 +22,17 @@ class Sensor(object):
     def calibrate(self):
         sensitivity = -1
         polarity = -1
-        if abs(self.chn_0.read() - self.chn_2.read()) < abs(self.chn_0.read()-self.chn_1.read()) and abs(self.chn_0.read() - self.chn_2.read()) < abs(self.chn_1.read()-self.chn_2.read()):
-            x = min((self.chn_0.read()-self.chn_1.read()), self.chn_0.read() - self.chn_2.read())/2
-            sensitivity = abs(self.chn_0.read() - self.chn_2.read()) + x
+        # if abs(self.chn_0.read() - self.chn_2.read()) < abs(self.chn_0.read()-self.chn_1.read()) and abs(self.chn_0.read() - self.chn_2.read()) < abs(self.chn_1.read()-self.chn_2.read()):
+        x = min((self.chn_0.read()-self.chn_1.read()), self.chn_0.read() - self.chn_2.read())/2
+        sensitivity = abs(self.chn_0.read() - self.chn_2.read()) + x
             # return sensitivity
-            logging.debug(f"sensitivity: {sensitivity}")
+            # logging.debug(f"sensitivity: {sensitivity}")
             # return sensitivity
         # elif abs(self.chn_0.read() - self.chn_2.read()) > abs(self.chn_1.read()-self.chn_2.read()):
         #     sensitivity = self.sensor_reading + 10
         #     return sensitivity
-        else: 
-             logging.error(f"Robot is too far to calibrate")
+        # else: 
+        #      logging.error(f"Robot is too far to calibrate")
 
         if self.chn_0.read()-self.chn_1.read() < 0 and self.chn_2.read()-self.chn_1.read() < 0:
             polarity = 0
