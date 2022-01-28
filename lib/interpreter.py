@@ -1,5 +1,6 @@
 from cmath import log
 from re import L
+import time
 from adc import ADC
 from sensor import Sensor
 import logging 
@@ -121,15 +122,26 @@ class Interpreter(object):
        
         else: 
             (f"sensitivity not detectable from output: {self.sensitivity}")
-if __name__ == "__main__":
-    import time
+
+
+    def interp_sense (self,sensor_bus, interp_bus, time_delay=0.15):
+        while True:
+            sensor_vals = sensor_bus.read()
+            time.sleep(time_delay)
+            interp_bus.write(self._output(sensor_vals))
+            time.sleep(time_delay)
+
+
+
+# if __name__ == "__main__":
+
     
     
-    sensor = Sensor()
-    sensitivity, polarity = sensor.calibrate()
-    interp = Interpreter(sensitivity,polarity)
-    sense_val= sensor.sensor_reading()
-    offset = interp.output(sense_val)
+#     sensor = Sensor()
+#     sensitivity, polarity = sensor.calibrate()
+#     interp = Interpreter(sensitivity,polarity)
+#     sense_val= sensor.sensor_reading()
+#     offset = interp.output(sense_val)
     
 
-    # logging.debug(f"Sensitivity and polarity :{IN}")
+#     # logging.debug(f"Sensitivity and polarity :{IN}")
