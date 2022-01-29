@@ -5,7 +5,6 @@ import logging
 from threading import Thread
 import concurrent.futures
 from picarx_improved import Picarx
-from nbformat import read
 from controller import Controller
 from sensor import Sensor
 from interpreter import Interpreter
