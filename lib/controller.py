@@ -1,4 +1,4 @@
-from re import L, X
+
 
 # from sklearn.cluster import k_means
 from adc import ADC
@@ -34,6 +34,7 @@ class Controller(object):
         while True: 
             offset = interp_bus.read()
             self.control(offset, steer_angle)
+            # self.car.forward(20)
             time.sleep(time_delay)
 
 # if __name__ == "__main__":

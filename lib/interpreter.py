@@ -1,5 +1,5 @@
 from cmath import log
-from re import L
+
 import time
 from adc import ADC
 from sensor import Sensor

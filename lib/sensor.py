@@ -1,9 +1,9 @@
 
 
 from random import random
-from re import L
+
 import time
-from nbformat import read
+
 from adc import ADC
 import logging 
 import random 
