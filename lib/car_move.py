@@ -26,7 +26,7 @@ while True:
         eSensor = executor.submit(sense.sense_produce,sense_bus)
 
         logging.debug("starting the interpreter aka preducer-consumer!!!")
-        eInterpreter = executor.submit(interp.interp_sense,sense_interp)
+        eInterpreter = executor.submit(interp.interp_sense, sense_bus, sense_interp)
 
         logging.debug("starting the controller aka consumer!!!")
         eController= executor.submit(control.control_move, sense_interp, steer_angle= 20)

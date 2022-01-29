@@ -56,6 +56,7 @@ class Sensor(object):
             reading = self.sensor_reading()
             sense_bus.write(reading)
             time.sleep(time_delay)
+            logging.debug(f"sense_produce= {reading}")
 
 
 

@@ -36,6 +36,7 @@ class Controller(object):
             self.control(offset, steer_angle)
             # self.car.forward(20)
             time.sleep(time_delay)
+            logging.debug(f"control_move = {offset}")
 
 # if __name__ == "__main__":
 #     import time

@@ -129,6 +129,7 @@ class Interpreter(object):
             sensor_vals = sensor_bus.read()
             interp_bus.write(self.output(sensor_vals))
             time.sleep(time_delay)
+            logging.debug(f"interp_sense= {sensor_vals}")
 
 
 
