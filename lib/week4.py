@@ -1,10 +1,10 @@
 from readerwriterlock import rwlock
 
 
-class Bus(object ):
+class Bus(object):
     
-    def __init__(self,message):
-        self.message = message 
+    def __init__(self):
+        self.message = None
         self.lock = rwlock.RWLockWriteD()
     
     
