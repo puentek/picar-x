@@ -127,8 +127,7 @@ class Interpreter(object):
     def interp_sense (self,sensor_bus, interp_bus, time_delay=0.15):
         while True:
             sensor_vals = sensor_bus.read()
-            time.sleep(time_delay)
-            interp_bus.write(self._output(sensor_vals))
+            interp_bus.write(self.output(sensor_vals))
             time.sleep(time_delay)
 
 
