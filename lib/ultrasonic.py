@@ -1,10 +1,14 @@
 import time
+import logging 
+logging.basicConfig(level=logging.DEBUG)
+from pin import Pin
 
 
 class Ultrasonic():
     def __init__(self, trig, echo, timeout=0.02):
-        self.trig = trig
-        self.echo = echo
+        
+        self.trig = Pin("D2") 
+        self.echo = Pin("D3")
         self.timeout = timeout
 
     def _read(self):
@@ -34,3 +38,14 @@ class Ultrasonic():
             if a != -1 or a <= 300:
                 return a
         return -1
+
+# class USensor():
+#     def __init__(self) -> None:
+#         pass
+
+#     def ultra_sense_produce (self,sense_bus,time_delay=0.15):
+#         while True:
+#             reading = self.sensor_reading()
+#             sense_bus.write(reading)
+#             time.sleep(time_delay)
+#             logging.debug(f"sense_produce= {reading}")
